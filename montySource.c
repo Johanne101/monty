@@ -1,4 +1,4 @@
-#include "montyLib.h"
+#include "monty.h"
 
 /**
  *main - it's supposed to accept arguments and process files

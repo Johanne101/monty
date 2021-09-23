@@ -1,4 +1,4 @@
-#include "montyLib.h"
+#include "monty.h"
 
 /**
  *getOp - will get one of the function listed

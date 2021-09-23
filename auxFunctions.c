@@ -1,4 +1,4 @@
-#include "montyLib.h"
+#include "monty.h"
 
 /**
  *_isanum - will check if the next token is a digit

@@ -1,4 +1,4 @@
-#include "montyLib.h"
+#include "monty.h"
 
 /**
  *_pall - will print the nodes of the list

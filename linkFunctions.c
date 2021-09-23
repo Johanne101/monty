@@ -1,4 +1,4 @@
-#include "montyLib.h"
+#include "monty.h"
 
 /**
  *addNode - will add a node at the top of the list (stack)
