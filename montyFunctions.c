@@ -9,21 +9,21 @@
 
 void _pall(stack_t **head, unsigned int line)
 {
-        stack_t *temp = NULL;
-        (void)line;
+	stack_t *temp = NULL;
+	(void)line;
 
-        if (head == NULL || *head == NULL)
-        {
-                return;
-        }
+	if (head == NULL || *head == NULL)
+	{
+		return;
+	}
 
-        temp = *head;
+	temp = *head;
 
-        while (temp != NULL)
-        {
-                printf("%d\n", temp->n);
-                temp = temp->next;
-        }
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 /**
@@ -101,10 +101,10 @@ void _swap(stack_t **head, unsigned int line)
 {
 	stack_t *temp, *temp2;
 
-	if (*head == NULL && head == NULL)
+	if (*head == NULL && head == NULL || list_len(*head) < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	if ((*head)->next->next == NULL)
@@ -122,10 +122,10 @@ void _swap(stack_t **head, unsigned int line)
 		temp = *head;
 		temp2 = (*head)->next;
 		temp->next = temp2->next;
-		
-
-
-
-
+		temp2->next->prev = temp;
+		temp2->prev = NULL;
+		temp2->next = temp;
+		temp->prev = temp2;
+		*head = temp2;
 	}
 }

@@ -3,7 +3,7 @@
 /**
  *addNode - will add a node at the top of the list (stack)
  *@head: is the address of head and will point to the first node
- *@token: is the integer to add in the list
+ *@n: is the integer to add in the list
  *Return: will return the new node
  */
 
@@ -55,4 +55,22 @@ void freeList(stack_t *head)
 		head = head->next;
 		free(temp);
 	}
+}
+
+/**
+ * list_len - Function returns numbers of elements in a linked list.
+ * @h: Pointers with string elements.
+ *
+ * Return: number of elements.
+ */
+size_t list_len(stack_t *h)
+{
+	size_t total_l = 0;
+
+	while (h)
+	{
+		h = h->next;
+		total_l++;
+	}
+	return (total_l);
 }

@@ -14,13 +14,7 @@ void (*getOp(char *token))(stack_t **head, unsigned int line)
 		{"pop", _pop},
 		{"swap", _swap},
 		{"nop", _nop},
-		/*{"add", _add},
-		{"sub", _sub},
-		{"div",  _div},
-		{"mul", _mul},
-		{"mod", _mod},
-		{"pchar", _pchar},
-		{"pstr", _pstr},*/
+		/*{"add", _add},*/
 		{NULL, NULL}
 	};
 

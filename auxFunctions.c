@@ -9,46 +9,46 @@
 
 int _isanum(char *token, unsigned int line)
 {
-        int index;
+	int index;
 
-        if (token == NULL)
-        {
-                fprintf(stderr, "L%d: usage: push integer\n", line);
-                exit(EXIT_FAILURE);
-        }
+	if (token == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line);
+		exit(EXIT_FAILURE);
+	}
 
-        for (index = 0; token[index] != '\0'; index++)
-        {
-                if (token[index] == '-')
-                {
+	for (index = 0; token[index] != '\0'; index++)
+	{
+		if (token[index] == '-')
+		{
 			/* printf("Before %d\n", isdigit(token[index + 1])); */
-                        if (isdigit(token[index + 1]) != 0)
-                        {
+			if (isdigit(token[index + 1]) != 0)
+			{
 				/* printf("After %s\n", token); */
-                                return (0);
-                        }
+				return (0);
+			}
 			else
 			{
 				fprintf(stderr, "L%d: usage: push integer\n",
-					line);
+						line);
 				exit(EXIT_FAILURE);
 			}
-                }
-                else if (isdigit(token[index]) != 0)
-                {
-                        return (0);
-                }
+		}
+		else if (isdigit(token[index]) != 0)
+		{
+			return (0);
+		}
 		else if (isdigit(token[index]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
-        }
+	}
 	return (0);
 }
 
 /**
- *checkbuffer - will pass the strings one by one to a buffer and check them
+ *checkBuffer - will pass the strings one by one to a buffer and check them
  *@fd: is the input of the file to pass into the buffer
  *@buffer: will be the lines, one by one, to check and tokenize
  *Return: will return nothing (void)
@@ -87,7 +87,7 @@ void checkBuffer(FILE *fd, char *buffer)
 			{
 				freeList(head); /* If not then free all nodes */
 				fprintf(stderr, "L%d: unknown instruction %s\n",
-					line, buffer);
+						line, buffer);
 				exit(EXIT_FAILURE);
 			}
 		}
