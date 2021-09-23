@@ -67,6 +67,7 @@ int _isanum(char *token, unsigned int line);
 
 stack_t *addNode(stack_t **head, const int n);
 void freeList(stack_t *head);
+size_t list_len(stack_t *h);
 
 /* MATH FUNCTIONS BELOW */
 
