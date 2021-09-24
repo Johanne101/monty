@@ -15,6 +15,8 @@ void (*getOp(char *token))(stack_t **head, unsigned int line)
 		{"swap", _swap},
 		{"nop", _nop},
 		{"add", _add},
+		{"sub", _sub},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
