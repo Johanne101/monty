@@ -33,7 +33,7 @@ void _add(stack_t **head, unsigned int line)
 
 void _sub(stack_t **head, unsigned int line)
 {
-	stack_t *temp, *temp2;
+	stack_t *temp;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -41,11 +41,10 @@ void _sub(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 
-	temp2 = (*head)->next; /* Take the addrs of the next node */
-	temp = *head; /* Take the first node addrs */
-	temp2->n = temp2->n - temp->n; /* do the sub and give to temp2 */
-	*head = (*head)->next; /* Move head to the next node (temp2 pos */
-	(*head)->prev = NULL; /* Make prev node, after moving head, null */
+	temp = *head; /* Take the addrs of the next node */
+	(*head)->next->n -= (*head)->n;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
 	free(temp);
 }
 
@@ -59,7 +58,7 @@ void _sub(stack_t **head, unsigned int line)
 
 void _mul(stack_t **head, unsigned int line)
 {
-	stack_t *temp, *temp2;
+	stack_t *temp;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -67,10 +66,9 @@ void _mul(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 
-	temp = (*head)->next;
-	temp2 = *head;
-	temp->n = temp->n * temp2->n;
+	temp = *head;
+	(*head)->next->n *= (*head)->n;
 	*head = (*head)->next;
 	(*head)->prev = NULL;
-	free(temp2);
+	free(temp);
 }
