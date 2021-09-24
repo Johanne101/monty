@@ -17,6 +17,8 @@ void _add(stack_t **head, unsigned int line)
 	sum = (*head)->n;
 	(*head) = (*head)->next;
 	(*head)->n += sum;
+	free((*head)->prev);
 	(*head)->prev = NULL;
+	
 
 }
