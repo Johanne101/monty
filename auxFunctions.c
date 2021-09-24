@@ -67,26 +67,29 @@ void checkBuffer(FILE *fd, char *buffer)
 			line++; /* count the line even if is empty */
 			continue; /* Get to "while" again and get a new line */
 		}
-
-		if (strcmp(token, "push") == 0)
+		if (token[0] != '#')
 		{
-			token = strtok(NULL, delim); /* Get the next str tok */
-			_isanum(token, line); /* check if next tok is a digit */
-			addNode(&head, atoi(token)); /* Add int to list node */
-		}
-		else
-		{
-			if (getOp(token) != 0) /* Check if token is not null */
+			if (strcmp(token, "push") == 0)
 			{
-				/* check if tok is an opFun */
-				getOp(token)(&head, line);
+				token = strtok(NULL, delim);
+				_isanum(token, line);
+				addNode(&head, atoi(token));
 			}
 			else
 			{
-				freeList(head); /* If not then free all nodes */
-				fprintf(stderr, "L%d: unknown instruction %s\n",
+				if (getOp(token) != 0) /*Chk if token != null*/
+				{
+					/* check if tok is an opFun */
+					getOp(token)(&head, line);
+				}
+				else
+				{
+					/* If not then free all nodes */
+					freeList(head);
+					fprintf(stderr, "L%d: unknown instruction %s\n",
 						line, buffer);
-				exit(EXIT_FAILURE);
+					exit(EXIT_FAILURE);
+				}
 			}
 		}
 		line++; /* Count a new line before get next line */
