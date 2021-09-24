@@ -44,7 +44,33 @@ void _sub(stack_t **head, unsigned int line)
 	temp2 = (*head)->next; /* Take the addrs of the next node */
 	temp = *head; /* Take the first node addrs */
 	temp2->n = temp2->n - temp->n; /* do the sub and give to temp2 */
-        *head = (*head)->next; /* Move head to the next node (temp2 pos */
-        (*head)->prev = NULL; /* Make prev node, after moving head, null */
-        free(temp);
+	*head = (*head)->next; /* Move head to the next node (temp2 pos */
+	(*head)->prev = NULL; /* Make prev node, after moving head, null */
+	free(temp);
+}
+
+/**
+ *_mul - will multiply the first two nodes
+ *@head: is the first node of the stack
+ *@line: is the number of the line
+ *Return: will return nothing (void)
+ */
+
+
+void _mul(stack_t **head, unsigned int line)
+{
+	stack_t *temp, *temp2;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*head)->next;
+	temp2 = *head;
+	temp->n = temp->n * temp2->n;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+	free(temp2);
 }

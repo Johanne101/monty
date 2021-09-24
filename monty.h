@@ -72,6 +72,7 @@ size_t list_len(stack_t *h);
 
 void _add(stack_t **head, unsigned int line);
 void _sub(stack_t **head, unsigned int line);
+void _mul(stack_t **head, unsigned int line);
 
 /* GET OP FUNCTION BELOW */
 
