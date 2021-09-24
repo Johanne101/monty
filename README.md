@@ -141,7 +141,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=c90 *.c -o monty
 ### More Info
 ---------------
 Data structures
-These are the following data structures we are utilizing for this project. 
+These are the following data structures we are utilizing for this project.
 You will find it in the header file.
 ```
 /**
