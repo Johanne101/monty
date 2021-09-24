@@ -79,15 +79,12 @@ void checkBuffer(FILE *fd, char *buffer)
 			{
 				if (getOp(token) != 0) /*Chk if token != null*/
 				{
-					/* check if tok is an opFun */
 					getOp(token)(&head, line);
 				}
 				else
 				{
-					/* If not then free all nodes */
 					freeList(head);
-					fprintf(stderr, "L%d: unknown instruction %s\n",
-						line, buffer);
+					fprintf(stderr, "L%d: unknown instruction %s\n", line, buffer);
 					exit(EXIT_FAILURE);
 				}
 			}

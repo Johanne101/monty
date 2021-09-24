@@ -85,17 +85,17 @@ void _div(stack_t **head, unsigned int line)
 	stack_t *temp;
 
 	if (*head == NULL || (*head)->next == NULL)
-        {
-                fprintf(stderr, "L%d: can't div, stack too short\n", line);
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
 
 	temp = *head;
 
 	if ((*head)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	(*head)->next->n /= (*head)->n;
@@ -113,24 +113,24 @@ void _div(stack_t **head, unsigned int line)
 
 void _mod(stack_t **head, unsigned int line)
 {
-        stack_t *temp;
+	stack_t *temp;
 
-        if (*head == NULL || (*head)->next == NULL)
-        {
-                fprintf(stderr, "L%d: can't mod, stack too short\n", line);
-                exit(EXIT_FAILURE);
-        }
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
 
-        temp = *head;
+	temp = *head;
 
-        if ((*head)->n == 0)
-        {
-                fprintf(stderr, "L%d: division by zero\n", line);
-                exit(EXIT_FAILURE);
-        }
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line);
+		exit(EXIT_FAILURE);
+	}
 
-        (*head)->next->n %= (*head)->n;
-        *head = (*head)->next;
-        (*head)->prev = NULL;
-        free(temp);
+	(*head)->next->n %= (*head)->n;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+	free(temp);
 }
