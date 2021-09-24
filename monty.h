@@ -55,7 +55,6 @@ void _pall(stack_t **head, unsigned int line);
 void _pint(stack_t **head, unsigned int line);
 void _pop(stack_t **head, unsigned int line);
 void _swap(stack_t **head, unsigned int line);
-void _add(stack_t **head, unsigned int line);
 void _nop(stack_t **head, unsigned int line);
 
 /* AUXILIARY FUNCTIONS BELOW */
@@ -70,6 +69,9 @@ void freeList(stack_t *head);
 size_t list_len(stack_t *h);
 
 /* MATH FUNCTIONS BELOW */
+
+void _add(stack_t **head, unsigned int line);
+void _sub(stack_t **head, unsigned int line);
 
 /* GET OP FUNCTION BELOW */
 
