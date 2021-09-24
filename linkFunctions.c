@@ -21,6 +21,7 @@ stack_t *addNode(stack_t **head, const int n)
 	if (new_node == NULL)
 	{
 		free(new_node);
+		freeList(*head);
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
