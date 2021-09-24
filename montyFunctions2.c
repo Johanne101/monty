@@ -9,10 +9,10 @@ void _add(stack_t **head, unsigned int line)
 {
 	stack_t *temp, *temp2;
 
-	if ((*head == NULL) || ((*head)->next->next == NULL))
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short", line);
-			exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
+		exit(EXIT_FAILURE);
 	}
 
 	temp = *head;
