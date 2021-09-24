@@ -21,24 +21,22 @@ int _isanum(char *token, unsigned int line)
 	{
 		if (token[index] == '-')
 		{
-			/* printf("Before %d\n", isdigit(token[index + 1])); */
 			if (isdigit(token[index + 1]) != 0)
 			{
-				/* printf("After %s\n", token); */
-				return (0);
+				continue;
 			}
-			else
+			if (isdigit(token[index + 1] == 0))
 			{
 				fprintf(stderr, "L%d: usage: push integer\n",
 						line);
 				exit(EXIT_FAILURE);
 			}
 		}
-		else if (isdigit(token[index]) != 0)
+		if (isdigit(token[index]) != 0)
 		{
-			return (0);
+			continue;
 		}
-		else if (isdigit(token[index]) == 0)
+		if (token[index] < '0' || token[index] > '9')
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
