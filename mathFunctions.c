@@ -103,3 +103,34 @@ void _div(stack_t **head, unsigned int line)
 	(*head)->prev = NULL;
 	free(temp);
 }
+
+/**
+ *_mod - divided the two top elements and get the residue
+ *@head: is the first node of the list
+ *@line: is the number of the line
+ *Return: will return nothing (void)
+ */
+
+void _mod(stack_t **head, unsigned int line)
+{
+        stack_t *temp;
+
+        if (*head == NULL || (*head)->next == NULL)
+        {
+                fprintf(stderr, "L%d: can't div, stack too short\n", line);
+                exit(EXIT_FAILURE);
+        }
+
+        temp = *head;
+
+        if ((*head)->n == 0)
+        {
+                fprintf(stderr, "L%d: division by zero\n", line);
+                exit(EXIT_FAILURE);
+        }
+
+        (*head)->next->n %= (*head)->n;
+        *head = (*head)->next;
+        (*head)->prev = NULL;
+        free(temp);
+}
