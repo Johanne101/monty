@@ -85,8 +85,8 @@ void _pop(stack_t **head, unsigned int line)
 
 void _nop(stack_t **head, unsigned int line)
 {
-	(void)head;
-	(void)line;
+	(void)(head);
+	(void)(line);
 }
 
 
