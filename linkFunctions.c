@@ -11,7 +11,7 @@ stack_t *addNode(stack_t **head, const int n)
 {
 	stack_t *new_node;
 
-	if (head == NULL)
+	if (*head == NULL)
 	{
 		return (NULL);
 	}
