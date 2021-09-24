@@ -43,7 +43,7 @@ void _sub(stack_t **head, unsigned int line)
 
 	temp = *head; /* Take the first node addrs */
 	temp2 = (*head)->next; /* Take the addrs of the next node */
-	temp2->n = temp->n - temp2->n; /* do the sub and give to temp2 */
+	temp2->n = temp2->n - temp->n; /* do the sub and give to temp2 */
         *head = (*head)->next; /* Move head to the next node (temp2 pos */
         (*head)->prev = NULL; /* Make prev node, after moving head, null */
         free(temp);
